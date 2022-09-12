@@ -25,14 +25,9 @@ pipeline {
                 }
             }
             steps {
-                sh("./scripts/fibonacci.sh ${env.NUMBER}")
+                echo "testing"
             }
         }
-        stage('Full path') {
-            steps {
-                echo "hello world ${paramas.NUMBER}"
-            }
-        }
-  
+
     }
 }
