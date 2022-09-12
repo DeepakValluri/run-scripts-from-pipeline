@@ -51,7 +51,7 @@ pipeline {
             steps{
                         script{
                 gv.buildApp()
-                            echo "deploying to ${params.ONE}"
+                            echo "deploying to ${ONE}"
             }   
             }
  
