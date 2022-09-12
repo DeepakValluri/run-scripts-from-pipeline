@@ -10,9 +10,11 @@ pipeline {
     stages {
         stage('Make executable') {
             steps {
-                script{
+//                 script{
                     
-                }
+//                 }
+                
+                echo "make executable"
 
             }
         }
