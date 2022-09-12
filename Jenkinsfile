@@ -1,3 +1,5 @@
+def gv
+
 pipeline {
     agent any
     parameters {
@@ -10,9 +12,9 @@ pipeline {
     stages {
         stage('Make executable') {
             steps {
-//                 script{
-                    
-//                 }
+             script{
+                        gv = load "script.groovy"            
+                }
                 
                 echo "make executable"
 
@@ -24,9 +26,22 @@ pipeline {
                     params.executeTests == true
                 }
             }
+            
             steps {
-                echo "testing"
+                script{
+                    gv.testApp() 
+                }
+               
             }
+        }
+        
+        stage('deploy'){
+            script{
+                        steps{
+                gv.buildApp()
+            }   
+            }
+ 
         }
 
     }
